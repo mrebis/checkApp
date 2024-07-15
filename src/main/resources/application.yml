@@ -69,16 +69,15 @@ spring:
        
 # Database Settings
   datasource:
-    url: jdbc:postgresql://db-postgresql-tor1-13505-do-user-15845634-0.c.db.ondigitalocean.com:25060/checkmeApp?sslmode=require&ssl=true
-    username: doadmin
-    password: AVNS_vh0F5yxowEemxiRZZuz
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/feedAppModal
+    username: postgres
+    password: root
 
     hikari:
       maximum-pool-size: 2
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
     properties:
       hibernate:
        dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -97,10 +96,9 @@ spring:
 
 # Database Settings 
   datasource:
-    url: jdbc:postgresql://db-postgresql-tor1-13505-do-user-15845634-0.c.db.ondigitalocean.com:25060/checkmeApp?sslmode=require&ssl=true
-    username: doadmin
-    password: AVNS_vh0F5yxowEemxiRZZuz
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/checkApp
+    username: postgres
+    password: root
     ssl:
       enabled: true
       mode: verify-full
@@ -111,7 +109,7 @@ spring:
       maximum-pool-size: 2
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
     properties:
       hibernate:
        dialect: org.hibernate.dialect.PostgreSQLDialect
