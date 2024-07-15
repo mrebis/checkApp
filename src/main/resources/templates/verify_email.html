@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <title>Verification Email</title>
+    <style>
+        .header-section {
+            background-color: rgb(192, 192, 192);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer-section {
+            padding: 20px;
+            text-align: center;
+       background-color: #ef5241;
+        }
+        .social-icons img {
+            width: 24px;
+            margin: 0 10px;
+        }
+      h1{
+      width:500px
+      }
+      @media (max-width: 500px){
+      	h1{
+      width: 250px}
+      }
+    </style>
+</head>
+<body>
+    
+    <div class="header-section">
+        <h1> <img src="https://1stdate.net/assets/images/1stdate_logo.png" alt="1stDate logo" ></h1>
+    </div>
+
+    <div>Welcome <b th:text="${user.firstName} + ' ' + ${user.lastName}"></b>!</div>
+    <div> Your username is <b th:text="${user.username}"></b></div>
+    <div>
+        <p>Click the following link to confirm your email and finish signing up for the 1st Date App</p>
+      <br>   
+            
+      
+            <br>   
+
+				<p th:text="${client} + '/' + ${param} + '?token=' + ${token}"></p>
+
+      <br/>
+      <br/>
+    
+      
+      <p>This link is valid for 24 hours.</p>
+        <p>If you did not sign up for the 1stDate App, ignore this email.</p>
+        <p>Need help or have questions?</p>
+        <p>Call us Monday to Friday, from 8:30 a.m. to 5 p.m. Eastern time, excluding holidays:
+            • Toll-free:1-800-268-0097
+            • Toll-free TTY: 1-800-269-0095
+        </p>
+    </div>
+    
+    <div class="footer-section">
+        <div class="social-icons">
+            <!-- Example social media icons -->
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/128/4494/4494464.png" alt="Facebook"></a>
+            <a href="your-twitter-url"><img src="https://cdn-icons-png.flaticon.com/128/1384/1384015.png" alt="Twitter"></a>
+            <a href="your-instagram-url"><img src="https://cdn-icons-png.flaticon.com/128/5969/5969020.png" alt="Instagram"></a>
+            <!-- Add more social icons as needed -->
+        </div>
+    </div>
+    
+</body>
+</html>
