@@ -68,7 +68,7 @@ private void sendEmail(Users user, String clientParam, String templateName, Stri
 			MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
 			
 			/* Set Email Information */
-			helper.setFrom(this.emailFrom, "1stDate App - Resonance Solutions");
+			helper.setFrom(this.emailFrom, "Check App - TBD");
 			helper.setSubject(emailSubject);
 			helper.setText(process, true);
 			helper.setTo(user.getEmail());
