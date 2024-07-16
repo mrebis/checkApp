@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ebis.checkApp.jpa.Users;
 import com.ebis.checkApp.service.UsersService;
+import com.fasterxml.jackson.databind.JsonNode;
 
 @CrossOrigin(exposedHeaders = "Authorization")
 @RestController
@@ -90,14 +91,6 @@ public class UsersController {
                 }).orElse(ResponseEntity.notFound().build());
     }
 
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Object> deleteUser(@PathVariable Integer userId) {
-//        return usersService.deleteByUserId(userId)
-//                .map(user -> {
-//                    usersService.deleteByUserId(userId);
-//                    return ResponseEntity.noContent().build();
-//                }).orElse(ResponseEntity.notFound().build());
-//    }
     
 	@GetMapping("/verify/email")
 	public void verifyEmail() {
@@ -121,5 +114,20 @@ public class UsersController {
 	        return usersService.getAllOtherUsers();
 	    }
 	  
-	
+	    @GetMapping("/reset/{email}")
+		public void sendResetPasswordEmail(@PathVariable String email) {
+				
+				logger.debug("Sending Reset Password Email, emailId: {}", email);
+				
+				this.usersService.sendResetPasswordEmail(email);
+		}
+	    
+	    @PostMapping("/reset")
+		public void passwordReset(@RequestBody JsonNode json) {
+
+			logger.debug("Resetting Password, password: {}", json.get("password").asText());
+
+			this.usersService.resetPassword(json.get("password").asText());
+		}
+	    
 }
