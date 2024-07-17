@@ -69,7 +69,7 @@ spring:
        
 # Database Settings
   datasource:
-    url: jdbc:postgresql://localhost:5432/feedAppModal
+    url: jdbc:postgresql://localhost:5432/checkApp
     username: postgres
     password: root
 
@@ -99,12 +99,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/checkApp
     username: postgres
     password: root
-    ssl:
-      enabled: true
-      mode: verify-full
-      client-certificate: blob:https://cloud.digitalocean.com/f2141a15-4767-468e-be8c-491ea615c6e1
-      
-      
+    
     hikari:
       maximum-pool-size: 2
   jpa:
